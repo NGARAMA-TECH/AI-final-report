@@ -102,6 +102,14 @@ The working draft remains available as `paper/paper.md`.
 
 The paper currently has a 222-word abstract and 42 numbered references in the formatted manuscript.
 
+## Code Explanation Presentation
+
+The defense presentation explaining the source code is available at:
+
+- `docs/code_explanation_presentation.pptx`
+
+It explains the scripts, the reproducible workflow, why no model-training code is claimed for this survey paper, and likely questions with short answers.
+
 ## Citation Policy
 
 Use only genuine papers, technical reports, datasets, and benchmark descriptions. Add new references to `paper/references.bib` before citing them in `paper/paper.md`.
