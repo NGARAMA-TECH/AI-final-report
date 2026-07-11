@@ -8,6 +8,7 @@ datasets/raw/*
 datasets/processed/*
 paper/paper_chinaxiv.pdf
 paper/paper_chinaxiv_corrected.pdf
+paper/paper_chinaxiv_final.pdf
 chinaxiv-*.pdf
 docs/*.png
 !checkpoints/.gitkeep

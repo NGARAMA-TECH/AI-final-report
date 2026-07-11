@@ -4,7 +4,7 @@ Prepared files:
 
 - `paper_chinaxiv.md`: source manuscript with numbered citations and numbered references
 - `paper_chinaxiv.docx`: Word submission document
-- `paper_chinaxiv_final.pdf`: final PDF submission document
+- `paper_chinaxiv_final_with_bottom_line.pdf`: final PDF submission document with footer rule
 - `references.bib`: source bibliography
 - `figures/model_timeline.png`: model timeline chart
 - `figures/benchmark_timeline.png`: benchmark timeline chart
@@ -14,6 +14,7 @@ Formatting applied:
 
 - Letter page size matching the provided ChinaXiv sample PDF
 - Narrow centered margins closely matching the provided ChinaXiv sample
+- Bottom footer rule on every page, matching the provided ChinaXiv sample style
 - Centered title, author, affiliation, and corresponding-author information
 - English abstract with 222 words
 - Keywords

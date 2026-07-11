@@ -92,7 +92,7 @@ The ChinaXiv-style submission files are in `paper/`:
 
 - `paper_chinaxiv.md`: formatted source manuscript with numbered citations and references
 - `paper_chinaxiv.docx`: Word submission document
-- `paper_chinaxiv_final.pdf`: final PDF submission document
+- `paper_chinaxiv_final_with_bottom_line.pdf`: final PDF submission document with footer rule
 - `CHINAXIV_FORMAT_CHECKLIST.md`: formatting and integrity checklist
 - `figures/model_timeline.png` and `figures/benchmark_timeline.png`: reproducible academic charts
 

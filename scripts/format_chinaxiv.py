@@ -244,6 +244,20 @@ def set_cell_shading(cell, fill: str) -> None:
     tc_pr.append(shd)
 
 
+def set_paragraph_top_border(paragraph) -> None:
+    p_pr = paragraph._p.get_or_add_pPr()
+    p_bdr = p_pr.find(qn("w:pBdr"))
+    if p_bdr is None:
+        p_bdr = OxmlElement("w:pBdr")
+        p_pr.append(p_bdr)
+    top = OxmlElement("w:top")
+    top.set(qn("w:val"), "single")
+    top.set(qn("w:sz"), "4")
+    top.set(qn("w:space"), "2")
+    top.set(qn("w:color"), "000000")
+    p_bdr.append(top)
+
+
 def set_cell_text(cell, text: str, bold: bool = False) -> None:
     cell.text = ""
     para = cell.paragraphs[0]
@@ -331,6 +345,7 @@ def create_docx(china_md: str, references: list[str]) -> None:
 
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    set_paragraph_top_border(footer)
     footer_run = footer.add_run("https://github.com/NGARAMA-TECH/AI-final-report    ChinaXiv-style preprint")
     set_normal_run(footer_run, size=8)
 

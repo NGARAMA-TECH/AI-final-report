@@ -8,7 +8,7 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "chinaxiv-202509.00064.pdf"
-TARGET = ROOT / "paper" / "paper_chinaxiv_final.pdf"
+TARGET = ROOT / "paper" / "paper_chinaxiv_final_with_bottom_line.pdf"
 OUT = ROOT / "docs" / "chinaxiv_sample_comparison.md"
 
 
@@ -68,7 +68,7 @@ def main() -> None:
         "",
         "Sample file: `chinaxiv-202509.00064.pdf`",
         "",
-        "Target file: `paper/paper_chinaxiv_final.pdf`",
+        "Target file: `paper/paper_chinaxiv_final_with_bottom_line.pdf`",
         "",
         "## Measured Layout",
         "",
@@ -96,7 +96,7 @@ def main() -> None:
         "",
         "## Formatting Decision",
         "",
-        "The target manuscript uses Letter page size, narrow centered text width, 10 pt body text, 12 pt section headings, academic figure/table captions, numbered citations, and numbered references to match the observable ChinaXiv sample style as closely as practical in Word format.",
+        "The target manuscript uses Letter page size, narrow centered text width, 10 pt body text, 12 pt section headings, a bottom footer rule on every page, academic figure/table captions, numbered citations, and numbered references to match the observable ChinaXiv sample style as closely as practical in Word format.",
     ]
     OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {OUT}")
@@ -104,4 +104,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

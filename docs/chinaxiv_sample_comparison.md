@@ -2,7 +2,7 @@
 
 Sample file: `chinaxiv-202509.00064.pdf`
 
-Target file: `paper/paper_chinaxiv_final.pdf`
+Target file: `paper/paper_chinaxiv_final_with_bottom_line.pdf`
 
 ## Measured Layout
 
@@ -25,4 +25,4 @@ Target file: `paper/paper_chinaxiv_final.pdf`
 
 ## Formatting Decision
 
-The target manuscript uses Letter page size, narrow centered text width, 10 pt body text, 12 pt section headings, academic figure/table captions, numbered citations, and numbered references to match the observable ChinaXiv sample style as closely as practical in Word format.
+The target manuscript uses Letter page size, narrow centered text width, 10 pt body text, 12 pt section headings, a bottom footer rule on every page, academic figure/table captions, numbered citations, and numbered references to match the observable ChinaXiv sample style as closely as practical in Word format.
