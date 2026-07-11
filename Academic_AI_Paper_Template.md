@@ -24,7 +24,7 @@ Programming language: Python
 
 Framework: PyTorch if original experiments are added later. The current survey package does not train a model.
 
-GitHub repository: https://github.com/NGARAMA-TECH/AI-final-report
+GitHub repository: https://github.com/IssaIssa-tech/AI-final-report
 
 Repository status: the GitHub URL exists, but the local reproducibility package must be uploaded before the paper claims public code availability.
 
@@ -133,7 +133,7 @@ If no experiments are conducted, state this clearly and describe the reproducibi
 
 Intended repository:
 
-https://github.com/NGARAMA-TECH/AI-final-report
+https://github.com/IssaIssa-tech/AI-final-report
 
 Use this wording until the repository is populated:
 

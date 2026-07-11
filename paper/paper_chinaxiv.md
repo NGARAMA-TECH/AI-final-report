@@ -290,7 +290,7 @@ Synthetic instruction data also requires documentation. If prompts or answers ar
 
 ### 8.4 Public Repository Status
 
-The template names `https://github.com/NGARAMA-TECH/AI-final-report` as the intended repository. The URL exists, but it must contain the actual files before the paper claims public availability. This distinction is not administrative; it is part of research integrity. A reader should be able to open the link, inspect the code, and run the scripts. Until upload is complete, the paper should say that the local package is prepared and the public repository is pending population.
+The template names `https://github.com/IssaIssa-tech/AI-final-report` as the intended repository. The URL exists, but it must contain the actual files before the paper claims public availability. This distinction is not administrative; it is part of research integrity. A reader should be able to open the link, inspect the code, and run the scripts. Until upload is complete, the paper should say that the local package is prepared and the public repository is pending population.
 
 ## 9. Ethical, Safety, and Deployment Considerations
 
@@ -364,7 +364,7 @@ Future work should extend this survey in five directions. First, the bibliograph
 
 The intended public repository for this work is:
 
-https://github.com/NGARAMA-TECH/AI-final-report
+https://github.com/IssaIssa-tech/AI-final-report
 
 At the time this local package was prepared, the GitHub repository existed but was empty. Therefore, this paper should not claim that the public repository already contains the reproducibility materials until the local files are uploaded. The local package contains:
 

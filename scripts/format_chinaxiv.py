@@ -346,7 +346,7 @@ def create_docx(china_md: str, references: list[str]) -> None:
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_paragraph_top_border(footer)
-    footer_run = footer.add_run("https://github.com/NGARAMA-TECH/AI-final-report    ChinaXiv-style preprint")
+    footer_run = footer.add_run("https://github.com/IssaIssa-tech/AI-final-report    ChinaXiv-style preprint")
     set_normal_run(footer_run, size=8)
 
     styles = doc.styles

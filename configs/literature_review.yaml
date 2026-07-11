@@ -8,11 +8,10 @@ reproducibility:
   no_fabricated_results: true
   no_unverified_references: true
   quantitative_results_policy: "Only include numbers from executed experiments or directly verified source papers."
-  public_repository: "https://github.com/NGARAMA-TECH/AI-final-report"
+  public_repository: "https://github.com/IssaIssa-tech/AI-final-report"
 survey_axes:
   - architecture
   - training_paradigm
   - benchmark_focus
   - limitations
   - reproducibility_status
-

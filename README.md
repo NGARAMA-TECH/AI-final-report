@@ -19,7 +19,7 @@ No benchmark numbers are fabricated in this package. The paper discusses archite
 
 The intended public repository URL is:
 
-https://github.com/NGARAMA-TECH/AI-final-report
+https://github.com/IssaIssa-tech/AI-final-report
 
 At the time this local package was prepared, the public GitHub repository existed but was empty. Upload these local files before claiming that the public repository contains the reproducibility materials.
 
@@ -92,7 +92,7 @@ The ChinaXiv-style submission files are in `paper/`:
 
 - `paper_chinaxiv.md`: formatted source manuscript with numbered citations and references
 - `paper_chinaxiv.docx`: Word submission document
-- `paper_chinaxiv_final_with_bottom_line.pdf`: final PDF submission document with footer rule
+- `paper_chinaxiv_final_with_bottom_line_newurl.pdf`: final PDF submission document with footer rule and corrected GitHub URL
 - `CHINAXIV_FORMAT_CHECKLIST.md`: formatting and integrity checklist
 - `figures/model_timeline.png` and `figures/benchmark_timeline.png`: reproducible academic charts
 

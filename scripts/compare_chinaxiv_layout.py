@@ -8,7 +8,7 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "chinaxiv-202509.00064.pdf"
-TARGET = ROOT / "paper" / "paper_chinaxiv_final_with_bottom_line.pdf"
+TARGET = ROOT / "paper" / "paper_chinaxiv_final_with_bottom_line_newurl.pdf"
 OUT = ROOT / "docs" / "chinaxiv_sample_comparison.md"
 
 
@@ -68,7 +68,7 @@ def main() -> None:
         "",
         "Sample file: `chinaxiv-202509.00064.pdf`",
         "",
-        "Target file: `paper/paper_chinaxiv_final_with_bottom_line.pdf`",
+        "Target file: `paper/paper_chinaxiv_final_with_bottom_line_newurl.pdf`",
         "",
         "## Measured Layout",
         "",
