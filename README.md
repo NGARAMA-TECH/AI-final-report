@@ -86,7 +86,17 @@ python scripts/generate_tables.py
 
 The generated outputs are written to `results/tables/`.
 
+## Final Paper Files
+
+The ChinaXiv-style submission files are in `paper/`:
+
+- `paper_chinaxiv.md`: formatted source manuscript with numbered citations and references
+- `paper_chinaxiv.docx`: Word submission document
+- `paper_chinaxiv.pdf`: PDF submission document
+- `CHINAXIV_FORMAT_CHECKLIST.md`: formatting and integrity checklist
+
+The working draft remains available as `paper/paper.md`.
+
 ## Citation Policy
 
 Use only genuine papers, technical reports, datasets, and benchmark descriptions. Add new references to `paper/references.bib` before citing them in `paper/paper.md`.
-
