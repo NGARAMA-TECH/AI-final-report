@@ -18,6 +18,7 @@ chinaxiv-*.pdf
 Lesson*.pdf
 Lab*.pdf
 docs/*.png
+docs/*.pptx
 !checkpoints/.gitkeep
 !logs/.gitkeep
 !datasets/raw/.gitkeep
