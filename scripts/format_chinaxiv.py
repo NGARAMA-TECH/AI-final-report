@@ -218,6 +218,17 @@ def csv_to_markdown(path: Path) -> str:
     return "\n".join(lines)
 
 
+def csv_to_markdown_columns(path: Path, headers: list[str]) -> str:
+    rows = read_csv(path)
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(["---"] * len(headers)) + " |",
+    ]
+    for row in rows:
+        lines.append("| " + " | ".join(row[h] for h in headers) + " |")
+    return "\n".join(lines)
+
+
 def build_chinaxiv_markdown() -> tuple[str, list[str], list[str]]:
     original = PAPER_MD.read_text(encoding="utf-8")
     bib = parse_bib(BIB)
@@ -227,7 +238,21 @@ def build_chinaxiv_markdown() -> tuple[str, list[str], list[str]]:
     text = text.replace("## References\n\nThe bibliography is maintained in `references.bib`.\n", "").rstrip()
 
     architecture_figure = "Figure 1. General MLLM architecture and information-flow bottleneck.\n\n![Figure 1](figures/architecture_diagram.png)"
-    comparison_table = "Table 1. Comprehensive comparison of representative MLLMs.\n\n" + csv_to_markdown(MODEL_COMPARISON_TABLE)
+    model_comparison_part_a_headers = ["Model", "Year", "Vision Encoder", "LLM Backbone", "Connector", "Open Source"]
+    model_comparison_part_b_headers = [
+        "Model",
+        "Complexity and Resource Demand",
+        "Applicable Scenario",
+        "Major Strength",
+        "Major Weakness",
+    ]
+    comparison_table = (
+        "Table 1a. Representative MLLM architecture and openness comparison.\n\n"
+        + csv_to_markdown_columns(MODEL_COMPARISON_TABLE, model_comparison_part_a_headers)
+        + "\n\n"
+        + "Table 1b. Representative MLLM resource demand, scenario, and limitation comparison.\n\n"
+        + csv_to_markdown_columns(MODEL_COMPARISON_TABLE, model_comparison_part_b_headers)
+    )
     model_table = "Table 2. Representative MLLM architecture taxonomy.\n\n" + csv_to_markdown(MODEL_TABLE)
     connector_figure = "Figure 2. Connector trade-offs in MLLM design.\n\n![Figure 2](figures/connector_tradeoff_diagram.png)"
     model_figure = "Figure 3. Timeline distribution of representative MLLM-related models.\n\n![Figure 3](figures/model_timeline.png)"
@@ -290,17 +315,23 @@ def set_paragraph_top_border(paragraph) -> None:
     p_bdr.append(top)
 
 
-def set_cell_text(cell, text: str, bold: bool = False) -> None:
+def set_cell_text(cell, text: str, bold: bool = False, size: int = 6) -> None:
     cell.text = ""
     para = cell.paragraphs[0]
     run = para.add_run(text.replace("_", " "))
     run.bold = bold
     run.font.name = "Times New Roman"
     run._element.rPr.rFonts.set(qn("w:eastAsia"), "SimSun")
-    run.font.size = Pt(6)
+    run.font.size = Pt(size)
 
 
-def add_csv_table(doc: Document, caption: str, path: Path) -> None:
+def add_csv_table(
+    doc: Document,
+    caption: str,
+    path: Path,
+    headers: list[str] | None = None,
+    font_size: int = 6,
+) -> None:
     para = doc.add_paragraph(caption)
     para.alignment = WD_ALIGN_PARAGRAPH.CENTER
     for run in para.runs:
@@ -308,17 +339,18 @@ def add_csv_table(doc: Document, caption: str, path: Path) -> None:
         run.font.size = Pt(8)
         run.bold = True
 
-    rows = display_rows(path)
-    headers = list(rows[0].keys())
+    rows = display_rows(path) if headers is None else read_csv(path)
+    headers = list(rows[0].keys()) if headers is None else headers
     table = doc.add_table(rows=1, cols=len(headers))
     table.style = "Table Grid"
+    table.autofit = True
     for idx, header in enumerate(headers):
-        set_cell_text(table.rows[0].cells[idx], header, bold=True)
+        set_cell_text(table.rows[0].cells[idx], header, bold=True, size=font_size)
         set_cell_shading(table.rows[0].cells[idx], "D9EAF7")
     for row in rows:
         cells = table.add_row().cells
         for idx, header in enumerate(headers):
-            set_cell_text(cells[idx], row[header])
+            set_cell_text(cells[idx], row[header], size=font_size)
     source = doc.add_paragraph("Source: Compiled by the author based on cited literature and course materials.")
     source.alignment = WD_ALIGN_PARAGRAPH.CENTER
     for run in source.runs:
@@ -455,14 +487,35 @@ def create_docx(china_md: str, references: list[str]) -> None:
             or stripped.startswith("Corresponding author:")
         ):
             continue
-        if stripped.startswith("Table 1. Comprehensive"):
-            add_csv_table(doc, stripped, MODEL_COMPARISON_TABLE)
+        if stripped.startswith("Table 1a."):
+            add_csv_table(
+                doc,
+                stripped,
+                MODEL_COMPARISON_TABLE,
+                headers=["Model", "Year", "Vision Encoder", "LLM Backbone", "Connector", "Open Source"],
+                font_size=6,
+            )
+            continue
+        if stripped.startswith("Table 1b."):
+            add_csv_table(
+                doc,
+                stripped,
+                MODEL_COMPARISON_TABLE,
+                headers=[
+                    "Model",
+                    "Complexity and Resource Demand",
+                    "Applicable Scenario",
+                    "Major Strength",
+                    "Major Weakness",
+                ],
+                font_size=6,
+            )
             continue
         if stripped.startswith("Table 2. Representative MLLM architecture"):
-            add_csv_table(doc, stripped, MODEL_TABLE)
+            add_csv_table(doc, stripped, MODEL_TABLE, font_size=7)
             continue
         if stripped.startswith("Table 3. Representative MLLM benchmark"):
-            add_csv_table(doc, stripped, BENCHMARK_TABLE)
+            add_csv_table(doc, stripped, BENCHMARK_TABLE, font_size=7)
             continue
         figure_map = {
             "Figure 1.": ARCHITECTURE_FIGURE,

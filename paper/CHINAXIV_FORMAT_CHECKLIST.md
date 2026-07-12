@@ -22,15 +22,16 @@ Formatting applied:
 - 1.5 line spacing in the main manuscript body
 - Bottom footer rule with centered page number on every page, matching the provided ChinaXiv sample style
 - Centered title, author, affiliation, and corresponding-author information
-- English abstract with 222 words
+- English abstract with 245 words
 - Five keywords
 - Six course-aligned main chapters
 - Main text in academic manuscript layout
-- Three inserted comparison/taxonomy tables
-- Comprehensive model comparison table
+- Four inserted comparison/taxonomy tables
+- Comprehensive model comparison table split into two readable parts
 - Seven inserted academic diagrams/charts
 - Fifteen Author's Analysis subsections
 - Two practical case studies
+- Learning Outcomes section before the conclusion
 - Numbered in-text citations, e.g. `[1]`
 - 68 numbered references formatted in GB/T 7714-like style
 - Code Availability section with the populated GitHub repository URL

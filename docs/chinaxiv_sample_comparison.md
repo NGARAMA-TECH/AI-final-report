@@ -8,7 +8,7 @@ Target file: `paper/paper_chinaxiv_course_guideline_final_v4.pdf`
 
 | Metric | Sample | Target |
 | --- | ---: | ---: |
-| pages | 18 | 28 |
+| pages | 18 | 29 |
 | page_width_pt | 612.0 | 595.3 |
 | page_height_pt | 792.0 | 841.9 |
 | left_margin_pt | 132.8 | 70.8 |
@@ -19,9 +19,9 @@ Target file: `paper/paper_chinaxiv_course_guideline_final_v4.pdf`
 ## Font Observations
 
 - Sample common font sizes: `[(10.0, 844), (9.0, 18), (12.0, 18), (7.0, 13), (14.3, 9), (7.1, 1)]`
-- Target common font sizes: `[(9.9, 842), (12.0, 4), (9.0, 3), (14.1, 3)]`
+- Target common font sizes: `[(9.9, 813), (12.0, 4), (9.0, 3), (14.1, 3)]`
 - Sample common fonts: `[('LMRoman10-Regular', 816), ('LMRoman10-Bold', 28), ('LMRoman12-Bold', 27), ('LMRoman9-Regular', 18), ('LatinModernMath-Regular', 13)]`
-- Target common fonts: `[('TimesNewRomanPSMT', 839), ('TimesNewRomanPS-BoldMT', 13)]`
+- Target common fonts: `[('TimesNewRomanPSMT', 810), ('TimesNewRomanPS-BoldMT', 13)]`
 
 ## Formatting Decision
 
