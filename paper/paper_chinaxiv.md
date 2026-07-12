@@ -314,7 +314,7 @@ Hallucination evaluation should separate several cases: nonexistent object menti
 
 Table 3. Representative MLLM benchmark taxonomy.
 
-| benchmark group | examples | primary capability | evaluation risk |
+| Benchmark Group | Examples | Primary Capability | Evaluation Risk |
 | --- | --- | --- | --- |
 | General VQA | VQA, GQA, OK-VQA | image-conditioned question answering | language priors and dataset bias |
 | OCR and chart reasoning | TextVQA, ChartQA | reading scene text and structured graphics | small text, chart parsing, and answer normalization |
