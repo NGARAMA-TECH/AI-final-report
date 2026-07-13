@@ -437,7 +437,7 @@ https://github.com/IssaIssa-tech/AI-final-report
 
 The reproducibility package is publicly available in the GitHub repository. The package contains:
 
-- `paper/paper.md`: survey manuscript
+- `paper/Survey_Multimodal_Intelligence_ISSA_25SF51115.md`: formatted survey manuscript
 - `paper/references.bib`: bibliography
 - `paper/tables/model_taxonomy.csv`: model taxonomy
 - `paper/tables/benchmark_taxonomy.csv`: benchmark taxonomy
@@ -446,7 +446,6 @@ The reproducibility package is publicly available in the GitHub repository. The 
 - `scripts/validate_references.py`: citation-key validation script
 - `scripts/generate_figures.py`: figure generation script
 - `scripts/format_chinaxiv.py`: ChinaXiv-style formatting script
-- `scripts/compare_chinaxiv_layout.py`: layout comparison script
 - `scripts/create_code_explanation_pptx.py`: presentation generation script
 - `requirements.txt` and `environment.yml`: software environment files
 

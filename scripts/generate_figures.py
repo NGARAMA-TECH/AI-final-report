@@ -35,7 +35,7 @@ def save_model_timeline() -> None:
     for bar, value in zip(bars, values):
         plt.text(bar.get_x() + bar.get_width() / 2, value + 0.05, str(value), ha="center", va="bottom", fontsize=8)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "model_timeline.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure3_timeline_models.png", dpi=300)
     plt.close()
 
 
@@ -56,7 +56,7 @@ def save_benchmark_timeline() -> None:
     for year, value in zip(years, values):
         plt.text(year, value + 0.05, str(value), ha="center", va="bottom", fontsize=8)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "benchmark_timeline.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure5_timeline_benchmarks.png", dpi=300)
     plt.close()
 
 
@@ -95,7 +95,7 @@ def save_architecture_diagram() -> None:
     ax.set_xlim(0, 8.6)
     ax.set_ylim(0.4, 2.8)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "architecture_diagram.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure1_architecture.png", dpi=300)
     plt.close()
 
 
@@ -119,7 +119,7 @@ def save_connector_diagram() -> None:
     ax.set_xlim(0, 5.4)
     ax.set_ylim(0.1, 3.0)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "connector_tradeoff_diagram.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure2_connector_tradeoffs.png", dpi=300)
     plt.close()
 
 
@@ -141,7 +141,7 @@ def save_benchmark_taxonomy_diagram() -> None:
     ax.set_xlim(0, 6.2)
     ax.set_ylim(0, 2.9)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "benchmark_taxonomy_diagram.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure4_benchmark_taxonomy.png", dpi=300)
     plt.close()
 
 
@@ -164,7 +164,7 @@ def save_grounding_workflow_diagram() -> None:
     ax.set_xlim(0, 7.7)
     ax.set_ylim(0.25, 2.7)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "grounding_workflow_diagram.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure7_evidence_grounded.png", dpi=300)
     plt.close()
 
 
@@ -182,7 +182,7 @@ def save_hallucination_diagram() -> None:
     ax.set_xlim(0, 6.1)
     ax.set_ylim(0.05, 2.85)
     plt.tight_layout()
-    plt.savefig(FIG_DIR / "hallucination_illustration.png", dpi=300)
+    plt.savefig(FIG_DIR / "figure6_hallucination.png", dpi=300)
     plt.close()
 
 
@@ -195,13 +195,13 @@ def main() -> None:
     save_benchmark_taxonomy_diagram()
     save_grounding_workflow_diagram()
     save_hallucination_diagram()
-    print(f"Wrote {FIG_DIR / 'model_timeline.png'}")
-    print(f"Wrote {FIG_DIR / 'benchmark_timeline.png'}")
-    print(f"Wrote {FIG_DIR / 'architecture_diagram.png'}")
-    print(f"Wrote {FIG_DIR / 'connector_tradeoff_diagram.png'}")
-    print(f"Wrote {FIG_DIR / 'benchmark_taxonomy_diagram.png'}")
-    print(f"Wrote {FIG_DIR / 'grounding_workflow_diagram.png'}")
-    print(f"Wrote {FIG_DIR / 'hallucination_illustration.png'}")
+    print(f"Wrote {FIG_DIR / 'figure1_architecture.png'}")
+    print(f"Wrote {FIG_DIR / 'figure2_connector_tradeoffs.png'}")
+    print(f"Wrote {FIG_DIR / 'figure3_timeline_models.png'}")
+    print(f"Wrote {FIG_DIR / 'figure4_benchmark_taxonomy.png'}")
+    print(f"Wrote {FIG_DIR / 'figure5_timeline_benchmarks.png'}")
+    print(f"Wrote {FIG_DIR / 'figure6_hallucination.png'}")
+    print(f"Wrote {FIG_DIR / 'figure7_evidence_grounded.png'}")
 
 
 if __name__ == "__main__":

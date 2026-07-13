@@ -2,18 +2,17 @@
 
 Prepared files:
 
-- `paper_chinaxiv.md`: source manuscript with numbered citations and numbered references
-- `paper_chinaxiv.docx`: Word submission document
-- `paper_chinaxiv_course_guideline_final_v4.pdf`: final course-guideline-aligned PDF submission document
+- `Survey_Multimodal_Intelligence_ISSA_25SF51115.md`: source manuscript with numbered citations and numbered references
+- `Survey_Multimodal_Intelligence_ISSA_25SF51115.docx`: Word submission document
+- `Survey_Multimodal_Intelligence_ISSA_25SF51115.pdf`: final course-guideline-aligned PDF submission document
 - `references.bib`: source bibliography
-- `figures/architecture_diagram.png`: MLLM architecture diagram
-- `figures/connector_tradeoff_diagram.png`: connector trade-off diagram
-- `figures/benchmark_taxonomy_diagram.png`: benchmark taxonomy diagram
-- `figures/grounding_workflow_diagram.png`: grounding workflow diagram
-- `figures/hallucination_illustration.png`: hallucination illustration
-- `figures/model_timeline.png`: model timeline chart
-- `figures/benchmark_timeline.png`: benchmark timeline chart
-- `docs/chinaxiv_sample_comparison.md`: layout comparison with the provided ChinaXiv sample
+- `figures/figure1_architecture.png`: MLLM architecture diagram
+- `figures/figure2_connector_tradeoffs.png`: connector trade-off diagram
+- `figures/figure3_timeline_models.png`: model timeline chart
+- `figures/figure4_benchmark_taxonomy.png`: benchmark taxonomy diagram
+- `figures/figure5_timeline_benchmarks.png`: benchmark timeline chart
+- `figures/figure6_hallucination.png`: hallucination illustration
+- `figures/figure7_evidence_grounded.png`: grounding workflow diagram
 
 Formatting applied:
 

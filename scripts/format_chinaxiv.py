@@ -19,15 +19,15 @@ BIB = ROOT / "paper" / "references.bib"
 MODEL_TABLE = ROOT / "paper" / "tables" / "model_taxonomy.csv"
 BENCHMARK_TABLE = ROOT / "paper" / "tables" / "benchmark_taxonomy.csv"
 MODEL_COMPARISON_TABLE = ROOT / "paper" / "tables" / "model_comparison.csv"
-MODEL_FIGURE = ROOT / "paper" / "figures" / "model_timeline.png"
-BENCHMARK_FIGURE = ROOT / "paper" / "figures" / "benchmark_timeline.png"
-ARCHITECTURE_FIGURE = ROOT / "paper" / "figures" / "architecture_diagram.png"
-CONNECTOR_FIGURE = ROOT / "paper" / "figures" / "connector_tradeoff_diagram.png"
-BENCHMARK_TAXONOMY_FIGURE = ROOT / "paper" / "figures" / "benchmark_taxonomy_diagram.png"
-GROUNDING_FIGURE = ROOT / "paper" / "figures" / "grounding_workflow_diagram.png"
-HALLUCINATION_FIGURE = ROOT / "paper" / "figures" / "hallucination_illustration.png"
-OUT_MD = ROOT / "paper" / "paper_chinaxiv.md"
-OUT_DOCX = ROOT / "paper" / "paper_chinaxiv.docx"
+ARCHITECTURE_FIGURE = ROOT / "paper" / "figures" / "figure1_architecture.png"
+CONNECTOR_FIGURE = ROOT / "paper" / "figures" / "figure2_connector_tradeoffs.png"
+MODEL_FIGURE = ROOT / "paper" / "figures" / "figure3_timeline_models.png"
+BENCHMARK_TAXONOMY_FIGURE = ROOT / "paper" / "figures" / "figure4_benchmark_taxonomy.png"
+BENCHMARK_FIGURE = ROOT / "paper" / "figures" / "figure5_timeline_benchmarks.png"
+HALLUCINATION_FIGURE = ROOT / "paper" / "figures" / "figure6_hallucination.png"
+GROUNDING_FIGURE = ROOT / "paper" / "figures" / "figure7_evidence_grounded.png"
+OUT_MD = ROOT / "paper" / "Survey_Multimodal_Intelligence_ISSA_25SF51115.md"
+OUT_DOCX = ROOT / "paper" / "Survey_Multimodal_Intelligence_ISSA_25SF51115.docx"
 
 
 CITATION_RE = re.compile(r"\[@([A-Za-z0-9:_-]+)\]")
@@ -237,7 +237,7 @@ def build_chinaxiv_markdown() -> tuple[str, list[str], list[str]]:
 
     text = text.replace("## References\n\nThe bibliography is maintained in `references.bib`.\n", "").rstrip()
 
-    architecture_figure = "Figure 1. General MLLM architecture and information-flow bottleneck showing the visual encoder, connector, and language model components.\n\n![Figure 1](figures/architecture_diagram.png)"
+    architecture_figure = "Figure 1. General MLLM architecture and information-flow bottleneck showing the visual encoder, connector, and language model components.\n\n![Figure 1](figures/figure1_architecture.png)"
     model_comparison_part_a_headers = ["Model", "Year", "Vision Encoder", "LLM Backbone", "Connector", "Open Source"]
     model_comparison_part_b_headers = [
         "Model",
@@ -254,13 +254,13 @@ def build_chinaxiv_markdown() -> tuple[str, list[str], list[str]]:
         + csv_to_markdown_columns(MODEL_COMPARISON_TABLE, model_comparison_part_b_headers)
     )
     model_table = "Table 2. Representative MLLM architecture taxonomy.\n\n" + csv_to_markdown(MODEL_TABLE)
-    connector_figure = "Figure 2. Connector trade-offs in MLLM design.\n\n![Figure 2](figures/connector_tradeoff_diagram.png)"
-    model_figure = "Figure 3. Timeline distribution of representative MLLM-related models.\n\n![Figure 3](figures/model_timeline.png)"
+    connector_figure = "Figure 2. Connector trade-offs in MLLM design.\n\n![Figure 2](figures/figure2_connector_tradeoffs.png)"
+    model_figure = "Figure 3. Timeline distribution of representative MLLM-related models.\n\n![Figure 3](figures/figure3_timeline_models.png)"
     benchmark_table = "Table 3. Representative MLLM benchmark taxonomy.\n\n" + csv_to_markdown(BENCHMARK_TABLE)
-    benchmark_taxonomy_figure = "Figure 4. Benchmark taxonomy for MLLM evaluation.\n\n![Figure 4](figures/benchmark_taxonomy_diagram.png)"
-    benchmark_figure = "Figure 5. Timeline distribution of representative MLLM benchmarks.\n\n![Figure 5](figures/benchmark_timeline.png)"
-    hallucination_figure = "Figure 6. Illustrative hallucination mechanism.\n\n![Figure 6](figures/hallucination_illustration.png)"
-    grounding_figure = "Figure 7. Evidence-grounded response workflow.\n\n![Figure 7](figures/grounding_workflow_diagram.png)"
+    benchmark_taxonomy_figure = "Figure 4. Benchmark taxonomy for MLLM evaluation.\n\n![Figure 4](figures/figure4_benchmark_taxonomy.png)"
+    benchmark_figure = "Figure 5. Timeline distribution of representative MLLM benchmarks.\n\n![Figure 5](figures/figure5_timeline_benchmarks.png)"
+    hallucination_figure = "Figure 6. Illustrative hallucination mechanism.\n\n![Figure 6](figures/figure6_hallucination.png)"
+    grounding_figure = "Figure 7. Evidence-grounded response workflow.\n\n![Figure 7](figures/figure7_evidence_grounded.png)"
 
     text = text.replace(
         "### 3.2 Survey Methodology",

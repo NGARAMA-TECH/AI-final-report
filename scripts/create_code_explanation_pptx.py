@@ -126,7 +126,7 @@ def slide_overview(prs: Presentation) -> None:
             "Generates Markdown taxonomy tables from CSV source data.",
             "Generates academic grayscale figures from the taxonomy CSV files.",
             "Formats the manuscript into ChinaXiv-style Markdown and Word files.",
-            "Compares the final PDF layout against the provided ChinaXiv sample.",
+            "Exports the final Markdown and Word submission files.",
         ],
         w=5.8,
     )
@@ -135,8 +135,7 @@ def slide_overview(prs: Presentation) -> None:
         "python scripts/validate_references.py\n"
         "python scripts/generate_tables.py\n"
         "python scripts/generate_figures.py\n"
-        "python scripts/format_chinaxiv.py\n"
-        "python scripts/compare_chinaxiv_layout.py",
+        "python scripts/format_chinaxiv.py",
     )
     add_footer(slide)
 
@@ -148,7 +147,7 @@ def slide_workflow(prs: Presentation) -> None:
         ("Inputs", ["paper.md", "references.bib", "model_taxonomy.csv", "benchmark_taxonomy.csv"]),
         ("Validation", ["validate_references.py", "checks citation keys", "prevents missing references"]),
         ("Generation", ["generate_tables.py", "generate_figures.py", "format_chinaxiv.py"]),
-        ("Outputs", ["paper_chinaxiv.md", "paper_chinaxiv.docx", "final PDF", "comparison report"]),
+        ("Outputs", ["Survey_Multimodal_Intelligence_ISSA_25SF51115.md", "final DOCX", "final PDF"]),
     ]
     x = 0.55
     for title, body in panels:
@@ -236,7 +235,7 @@ def slide_figures(prs: Presentation) -> None:
         "counts = Counter(row[\"year\"] for row in rows)\n"
         "years = sorted(counts)\n"
         "values = [counts[year] for year in years]\n\n"
-        "plt.savefig(FIG_DIR / \"model_timeline.png\", dpi=300)",
+        "plt.savefig(FIG_DIR / \"figure3_timeline_models.png\", dpi=300)",
     )
     add_footer(slide)
 
@@ -250,7 +249,7 @@ def slide_format(prs: Presentation) -> None:
             "Converts draft citation keys into numbered citations.",
             "Formats references in a GB/T 7714-like numbered style.",
             "Inserts compact taxonomy tables and generated figures.",
-            "Creates paper_chinaxiv.md and paper_chinaxiv.docx.",
+            "Creates Survey_Multimodal_Intelligence_ISSA_25SF51115.md and .docx.",
             "Sets A4 page size, 2.5 cm margins, 10 pt body text, bold headings, 1.5 line spacing, and a footer rule with centered page number.",
         ],
         w=6.0,
@@ -269,24 +268,21 @@ def slide_format(prs: Presentation) -> None:
 
 def slide_layout(prs: Presentation) -> None:
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    add_title(slide, "7. compare_chinaxiv_layout.py", "Purpose: compare final PDF layout with the ChinaXiv sample.")
+    add_title(slide, "7. Final Output Files", "Purpose: explain what the formatter produces.")
     add_bullets(
         slide,
         [
-            "Uses PyMuPDF to read PDF page dimensions, text boxes, font sizes, and fonts.",
-            "Compares the provided sample against the final PDF.",
-            "Writes docs/chinaxiv_sample_comparison.md.",
-            "Checks the final PDF against the sample while following the course A4 and 2.5 cm margin requirement.",
-            "Confirms footer rule, page numbers, fonts, captions, and source notes in the final submission.",
+            "The formatter writes the final Markdown and Word files.",
+            "The final PDF is exported from the generated Word document.",
+            "Output filenames include the paper topic, author name, and student ID.",
+            "The paper keeps A4 page size, 2.5 cm margins, figure captions, source notes, and page numbers.",
         ],
         w=6.0,
     )
     add_code_box(
         slide,
-        "doc = fitz.open(path)\n"
-        "page_width_pt = round(page.rect.width, 1)\n"
-        "left = min(span[\"bbox\"][0] for span in spans)\n"
-        "right = width - max(span[\"bbox\"][2] for span in spans)",
+        "OUT_MD = ROOT / \"paper\" / \"Survey_Multimodal_Intelligence_ISSA_25SF51115.md\"\n"
+        "OUT_DOCX = ROOT / \"paper\" / \"Survey_Multimodal_Intelligence_ISSA_25SF51115.docx\"",
     )
     add_footer(slide)
 
@@ -338,8 +334,8 @@ def slide_questions_2(prs: Presentation) -> None:
     add_title(slide, "11. More Defense Questions", "Answers for reproducibility and limitations.")
     questions = [
         "Q: Why did you not train an MLLM?\nA: The assignment output is a survey paper. Training would require datasets, model checkpoints, compute logs, seeds, and executed results.",
-        "Q: How can another person reproduce your outputs?\nA: Install requirements, then run validate_references.py, generate_tables.py, generate_figures.py, format_chinaxiv.py, and compare_chinaxiv_layout.py.",
-        "Q: What did the layout comparison check?\nA: Page size, approximate margins, font sizes, and common PDF fonts against the provided ChinaXiv sample.",
+        "Q: How can another person reproduce your outputs?\nA: Install requirements, then run validate_references.py, generate_tables.py, generate_figures.py, and format_chinaxiv.py.",
+        "Q: What are the final output files?\nA: The final Markdown, DOCX, and PDF use the Survey_Multimodal_Intelligence_ISSA_25SF51115 filename.",
         "Q: What is the GitHub link?\nA: https://github.com/IssaIssa-tech/AI-final-report",
     ]
     add_bullets(slide, questions, x=0.7, y=1.35, w=12.0, h=5.4, font_size=13)
@@ -355,8 +351,7 @@ def slide_commands(prs: Presentation) -> None:
         "python scripts/validate_references.py\n"
         "python scripts/generate_tables.py\n"
         "python scripts/generate_figures.py\n"
-        "python scripts/format_chinaxiv.py\n"
-        "python scripts/compare_chinaxiv_layout.py\n\n"
+        "python scripts/format_chinaxiv.py\n\n"
         "git log --oneline -3",
         x=0.85,
         y=1.35,

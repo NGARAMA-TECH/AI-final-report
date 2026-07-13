@@ -117,7 +117,7 @@ The most important theoretical issue is the visual-token bottleneck. A model can
 
 Figure 1. General MLLM architecture and information-flow bottleneck showing the visual encoder, connector, and language model components.
 
-![Figure 1](figures/architecture_diagram.png)
+![Figure 1](figures/figure1_architecture.png)
 
 ### 3.2 Survey Methodology
 
@@ -252,11 +252,11 @@ Table 2. Representative MLLM architecture taxonomy.
 
 Figure 2. Connector trade-offs in MLLM design.
 
-![Figure 2](figures/connector_tradeoff_diagram.png)
+![Figure 2](figures/figure2_connector_tradeoffs.png)
 
 Figure 3. Timeline distribution of representative MLLM-related models.
 
-![Figure 3](figures/model_timeline.png)
+![Figure 3](figures/figure3_timeline_models.png)
 
 ### 4.7 Training Paradigms
 
@@ -325,11 +325,11 @@ Table 3. Representative MLLM benchmark taxonomy.
 
 Figure 4. Benchmark taxonomy for MLLM evaluation.
 
-![Figure 4](figures/benchmark_taxonomy_diagram.png)
+![Figure 4](figures/figure4_benchmark_taxonomy.png)
 
 Figure 5. Timeline distribution of representative MLLM benchmarks.
 
-![Figure 5](figures/benchmark_timeline.png)
+![Figure 5](figures/figure5_timeline_benchmarks.png)
 
 ### 4.8.6 Comparative Analysis Without Fabricated Scores
 
@@ -373,7 +373,7 @@ Consider an illustrative image of a kitchen counter containing a bowl, a cup, an
 
 Figure 6. Illustrative hallucination mechanism.
 
-![Figure 6](figures/hallucination_illustration.png)
+![Figure 6](figures/figure6_hallucination.png)
 
 The scientifically preferable answer would be: "I do not see a sharp tool in the image; the visible items appear to include a bowl, cup, and cutting board." This response is better because it separates visible evidence from plausible but unsupported inference. The case also shows why hallucination evaluation should include absent-object questions, uncertainty prompts, and checks for overconfident descriptions. A useful MLLM should be rewarded not only for naming visible content, but also for refusing to invent content.
 
@@ -383,7 +383,7 @@ Consider an illustrative document image containing a student ID number, a course
 
 Figure 7. Evidence-grounded response workflow.
 
-![Figure 7](figures/grounding_workflow_diagram.png)
+![Figure 7](figures/figure7_evidence_grounded.png)
 
 The correct system behavior should include uncertainty: "The course title appears to be visible, but the ID number is too small to read confidently." In document understanding, exactness matters more than fluency. A wrong ID number, amount, date, or email address can make the model practically unusable even if the surrounding explanation is coherent. This case motivates specialized OCR modules, high-resolution visual processing, document-specific benchmarks, and answer formats that expose confidence or cite visual evidence.
 
@@ -521,7 +521,7 @@ https://github.com/IssaIssa-tech/AI-final-report
 
 The reproducibility package is publicly available in the GitHub repository. The package contains:
 
-- `paper/paper.md`: survey manuscript
+- `paper/Survey_Multimodal_Intelligence_ISSA_25SF51115.md`: formatted survey manuscript
 - `paper/references.bib`: bibliography
 - `paper/tables/model_taxonomy.csv`: model taxonomy
 - `paper/tables/benchmark_taxonomy.csv`: benchmark taxonomy
@@ -530,7 +530,6 @@ The reproducibility package is publicly available in the GitHub repository. The 
 - `scripts/validate_references.py`: citation-key validation script
 - `scripts/generate_figures.py`: figure generation script
 - `scripts/format_chinaxiv.py`: ChinaXiv-style formatting script
-- `scripts/compare_chinaxiv_layout.py`: layout comparison script
 - `scripts/create_code_explanation_pptx.py`: presentation generation script
 - `requirements.txt` and `environment.yml`: software environment files
 
