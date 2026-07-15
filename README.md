@@ -6,10 +6,6 @@
 
 This repository contains the source manuscript, bibliography, generated figures, tables, and scripts for a ChinaXiv-style Advanced Artificial Intelligence course survey paper.
 
-Public repository:
-
-https://github.com/IssaIssa-tech/AI-final-report
-
 ## Final Submission Files
 
 - `paper/Survey_Multimodal_Intelligence_ISSA_25SF51115.pdf`

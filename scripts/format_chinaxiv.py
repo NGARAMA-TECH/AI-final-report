@@ -399,6 +399,16 @@ def add_paragraph(doc: Document, text: str, style: str | None = None, align=None
     set_normal_run(run)
 
 
+def add_reference_paragraph(doc: Document, text: str) -> None:
+    para = doc.add_paragraph()
+    para.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    para.paragraph_format.first_line_indent = None
+    para.paragraph_format.line_spacing = 1.2
+    para.paragraph_format.space_after = Pt(1)
+    run = para.add_run(text)
+    set_normal_run(run, size=10)
+
+
 def add_heading(doc: Document, text: str, level: int) -> None:
     para = doc.add_paragraph()
     if level == 1:
@@ -460,7 +470,7 @@ def create_docx(china_md: str, references: list[str]) -> None:
     metadata = [
         "ISSA ISSA RASHID",
         "Student ID: 25SF51115",
-        "Supervisor / Course Instructor: Dr. Kuo-Kun Tseng",
+        "Course Instructor: Dr. Kuo-Kun Tseng",
         "School of Computer Science and Technology, Harbin Institute of Technology, Shenzhen, China",
         "Advanced Artificial Intelligence Course Laboratory",
         "Corresponding author: ISSA ISSA RASHID, 25sf51115@stu.hit.edu.cn",
@@ -492,6 +502,7 @@ def create_docx(china_md: str, references: list[str]) -> None:
             or stripped.startswith("Student ID:")
             or stripped.startswith("Affiliation:")
             or stripped.startswith("Supervisor / Course Instructor:")
+            or stripped.startswith("Course Instructor:")
             or stripped.startswith("Laboratory:")
             or stripped.startswith("Corresponding author:")
         ):
@@ -550,7 +561,7 @@ def create_docx(china_md: str, references: list[str]) -> None:
             add_heading(doc, "References", 1)
             continue
         if in_references:
-            add_paragraph(doc, stripped)
+            add_reference_paragraph(doc, stripped)
             continue
         if stripped.startswith("## "):
             add_heading(doc, stripped[3:], 1)

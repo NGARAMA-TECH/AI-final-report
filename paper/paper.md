@@ -3,7 +3,7 @@
 Authors: ISSA ISSA RASHID  
 Student ID: 25SF51115  
 Affiliation: School of Computer Science and Technology, Harbin Institute of Technology, Shenzhen, China  
-Supervisor / Course Instructor: Dr. Kuo-Kun Tseng  
+Course Instructor: Dr. Kuo-Kun Tseng  
 Laboratory: Advanced Artificial Intelligence Course Laboratory  
 Corresponding author: ISSA ISSA RASHID, 25sf51115@stu.hit.edu.cn
 
@@ -329,7 +329,7 @@ Synthetic instruction data also requires documentation. If prompts or answers ar
 
 ### 5.3.4 Public Repository Status
 
-The public repository is `https://github.com/IssaIssa-tech/AI-final-report`. It contains the manuscript source, bibliography, scripts, structured tables, generated figures, presentation materials, and final submission files. This is part of research integrity: a reader should be able to open the link, inspect the code, and rerun the scripts that validate citations, regenerate tables and figures, and produce the formatted manuscript.
+The public source-code repository is listed in the Code Availability section. It contains the manuscript source, bibliography, scripts, structured tables, generated figures, presentation materials, and final submission files. This is part of research integrity: a reader should be able to inspect the code and rerun the scripts that validate citations, regenerate tables and figures, and produce the formatted manuscript.
 
 ### Author's Analysis
 
@@ -431,23 +431,7 @@ The future of MLLMs will likely be shaped by reliability rather than raw fluency
 
 ## Code Availability
 
-The intended public repository for this work is:
-
-https://github.com/IssaIssa-tech/AI-final-report
-
-The reproducibility package is publicly available in the GitHub repository. The package contains:
-
-- `paper/Survey_Multimodal_Intelligence_ISSA_25SF51115.md`: formatted survey manuscript
-- `paper/references.bib`: bibliography
-- `paper/tables/model_taxonomy.csv`: model taxonomy
-- `paper/tables/benchmark_taxonomy.csv`: benchmark taxonomy
-- `paper/tables/model_comparison.csv`: comprehensive model comparison table
-- `scripts/generate_tables.py`: table generation script
-- `scripts/validate_references.py`: citation-key validation script
-- `scripts/generate_figures.py`: figure generation script
-- `scripts/format_chinaxiv.py`: ChinaXiv-style formatting script
-- `scripts/create_code_explanation_pptx.py`: presentation generation script
-- `requirements.txt` and `environment.yml`: software environment files
+The source-code link is printed in the footer of the final PDF submission.
 
 ## Final Verification Checklist
 

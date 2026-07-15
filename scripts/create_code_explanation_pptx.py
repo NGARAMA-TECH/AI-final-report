@@ -46,7 +46,7 @@ def add_footer(slide) -> None:
     line.line.color.rgb = RGBColor(160, 160, 160)
     foot = slide.shapes.add_textbox(Inches(0.55), Inches(7.12), Inches(12.25), Inches(0.25))
     p = foot.text_frame.paragraphs[0]
-    p.text = "AI-final-report code explanation | https://github.com/IssaIssa-tech/AI-final-report"
+    p.text = "AI-final-report code explanation"
     set_text(p.runs[0], size=8, color=GRAY)
     p.alignment = PP_ALIGN.CENTER
 
@@ -111,7 +111,7 @@ def slide_title(prs: Presentation) -> None:
     set_text(p2.runs[0], size=20, color=DARK)
     info = slide.shapes.add_textbox(Inches(0.85), Inches(4.0), Inches(11.2), Inches(1.1))
     p3 = info.text_frame.paragraphs[0]
-    p3.text = "Presenter: ISSA ISSA RASHID | Repository: https://github.com/IssaIssa-tech/AI-final-report"
+    p3.text = "Presenter: ISSA ISSA RASHID"
     set_text(p3.runs[0], size=15, color=GRAY)
     add_footer(slide)
 
@@ -336,7 +336,7 @@ def slide_questions_2(prs: Presentation) -> None:
         "Q: Why did you not train an MLLM?\nA: The assignment output is a survey paper. Training would require datasets, model checkpoints, compute logs, seeds, and executed results.",
         "Q: How can another person reproduce your outputs?\nA: Install requirements, then run validate_references.py, generate_tables.py, generate_figures.py, and format_chinaxiv.py.",
         "Q: What are the final output files?\nA: The final Markdown, DOCX, and PDF use the Survey_Multimodal_Intelligence_ISSA_25SF51115 filename.",
-        "Q: What is the GitHub link?\nA: https://github.com/IssaIssa-tech/AI-final-report",
+        "Q: Where is the source-code link?\nA: It is included in the final paper's Code Availability section.",
     ]
     add_bullets(slide, questions, x=0.7, y=1.35, w=12.0, h=5.4, font_size=13)
     add_footer(slide)
